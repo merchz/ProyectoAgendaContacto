@@ -10,12 +10,20 @@ import java.io.ObjectOutputStream;
 import java.util.*;
 
 
-
+/**
+ * 
+ * @author Enrique
+ *
+ */
 public class main {
 
 	public static void main(String[] args) throws ClassNotFoundException {
 		// TODO Apéndice de método generado automáticamente
 		ArrayList<Amigo> arrayAmigos=new ArrayList<Amigo>();
+		/**
+		 * try/catch si no encuentra el fichero 'agenda.dat' nos muestra el error (IOException)
+		 * cuando llega al final del fichero salta la excepción EOFException
+		 */
 		try {
 			ObjectInputStream d=new ObjectInputStream(new FileInputStream("c:\\archivos\\agenda.dat"));
 			Amigo c;
@@ -30,7 +38,9 @@ public class main {
 			}catch (IOException e) {
 			System.out.println(e.getMessage()); 
 			}
-	
+	/**
+	 * for-each recorre el arrayAmigos y los muestra
+	 */
 		for (Amigo e1: arrayAmigos ) {
 			System.out.println(e1);
 		}
